@@ -25,7 +25,7 @@ public class Controlador extends javax.servlet.http.HttpServlet {
 		crearMapaDeJSP();
     }
 	
-
+//prueba commit
 	public void doGet(HttpServletRequest req, HttpServletResponse res)
 				throws IOException, ServletException {
 		
