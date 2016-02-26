@@ -11,8 +11,16 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import alb.util.log.Log;
-
 import uo.sdi.acciones.*;
+import uo.sdi.acciones.publico.RegistrarseAction;
+import uo.sdi.acciones.publico.ValidarseAction;
+import uo.sdi.acciones.publico.VerViajePublicoAction;
+import uo.sdi.acciones.registrado.CerrarSesionAction;
+import uo.sdi.acciones.registrado.ConfirmarPasajerosAction;
+import uo.sdi.acciones.registrado.ModificarDatosAction;
+import uo.sdi.acciones.registrado.RegistrarViajeAction;
+import uo.sdi.acciones.registrado.SolicitarPlazaAction;
+import uo.sdi.acciones.registrado.VerViajeRegistradoAction;
 
 public class Controlador extends javax.servlet.http.HttpServlet {
 	
@@ -99,10 +107,17 @@ public class Controlador extends javax.servlet.http.HttpServlet {
 		Map<String,Accion> mapaPublico=new HashMap<String,Accion>();
 		mapaPublico.put("validarse", new ValidarseAction());
 		mapaPublico.put("listarViajes", new ListarViajesAction());
+		mapaPublico.put("registrase", new RegistrarseAction());
+		mapaPublico.put("verViajePublico", new VerViajePublicoAction());
 		mapaDeAcciones.put("PUBLICO", mapaPublico);
 		
 		Map<String,Accion> mapaRegistrado=new HashMap<String,Accion>();
 		mapaRegistrado.put("modificarDatos", new ModificarDatosAction());
+		mapaRegistrado.put("verViajeRegistrado", new VerViajeRegistradoAction());
+		mapaRegistrado.put("solicitarPlaza", new SolicitarPlazaAction());
+		mapaRegistrado.put("confirmarPasajeros", new ConfirmarPasajerosAction());
+		mapaRegistrado.put("registrarViaje", new RegistrarViajeAction());
+		mapaRegistrado.put("cerrarSesion", new CerrarSesionAction());
 		mapaDeAcciones.put("REGISTRADO", mapaRegistrado);
 	}
 	
@@ -116,11 +131,22 @@ public class Controlador extends javax.servlet.http.HttpServlet {
 		Map<String, String> resJSP=new HashMap<String, String>();
 
 		// Mapa de navegación del público
+		//Validarse
 		resJSP.put("FRACASO","/login.jsp");
 		opcionResJSP.put("validarse", resJSP);
+		//ListarViajes
 		resJSP=new HashMap<String, String>();
 		resJSP.put("EXITO","/listaViajes.jsp");
 		opcionResJSP.put("listarViajes", resJSP);
+		//Mostrar viaje publico
+		resJSP=new HashMap<String, String>();
+		resJSP.put("EXITO","/verViajePublico.jsp");
+		opcionResJSP.put("verViajePublico", resJSP);
+		//Registrarse
+		resJSP=new HashMap<String, String>();
+		resJSP.put("EXITO","/registro.jsp");
+		opcionResJSP.put("registrase", resJSP);
+		
 		
 		mapaDeNavegacion.put("PUBLICO",opcionResJSP);
 		
@@ -129,11 +155,35 @@ public class Controlador extends javax.servlet.http.HttpServlet {
 		resJSP=new HashMap<String, String>();
 		
 		// Mapa de navegación de usuarios registrados
+		//Validarse
 		resJSP.put("EXITO","/principal.jsp");
 		opcionResJSP.put("validarse", resJSP);
+		//Ver viaje registrado
+		resJSP=new HashMap<String, String>();
+		resJSP.put("EXITO","/verViajeRegistrado.jsp");
+		opcionResJSP.put("verViajeRegistrado", resJSP);
+		//Modificar datos
 		resJSP=new HashMap<String, String>();
 		resJSP.put("EXITO","/principal.jsp");
 		opcionResJSP.put("modificarDatos", resJSP);
+		//Solicitar plaza
+		resJSP=new HashMap<String, String>();
+		resJSP.put("EXITO","/solicitarPlaza.jsp");
+		resJSP.put("FRACASO","/viajeCompleto.jsp");
+		opcionResJSP.put("solicitarPlaza", resJSP);
+		//Confirmar pasajeros
+		resJSP=new HashMap<String, String>();
+		resJSP.put("EXITO","/confirmarPasajeros.jsp");
+		resJSP.put("FRACASO","/errorConfirmarPasajeros.jsp");
+		opcionResJSP.put("confirmarPasajeros", resJSP);
+		//Registrar viaje
+		resJSP=new HashMap<String, String>();
+		resJSP.put("EXITO","/registrarViaje.jsp");
+		opcionResJSP.put("registrarViaje", resJSP);
+		//Cerrar sesion
+		resJSP=new HashMap<String, String>();
+		resJSP.put("EXITO","/cerrarSesion.jsp");
+		opcionResJSP.put("cerrarSesion", resJSP);
 		
 		mapaDeNavegacion.put("REGISTRADO",opcionResJSP);
 	}
