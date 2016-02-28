@@ -1,0 +1,7 @@
+@CHARSET "ISO-8859-1";
+
+#log_register .col-md-4{
+	display: flex;
+	float:right;
+	margin-top: 18px;
+}

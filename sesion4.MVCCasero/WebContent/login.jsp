@@ -1,21 +1,46 @@
 <%@ page contentType="text/html" pageEncoding="UTF-8" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html><head> <title>ShareMyTrip - Inicie sesión</title>
-<body>
-  <form action="validarse" method="post">
+<html>
+<head>
+	
+	<!-- BOOSTRAP -->
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet"
+	href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 
- 	<center><h1>Inicie sesión</h1></center>
- 	<hr><br>
- 	<table align="center">
-    	<tr> 
-    		<td align="right">Su identificador de usuario</td>
-	    	<td><input type="text" name="nombreUsuario" align="left" size="15"></td>
-      	</tr>
-      	<tr>
-    	    <td><input type="submit" value="Enviar"/></td>
-      	</tr>
-      </table>
-   </form>
-   <a id="listarViajes" href="listarViajes">Lista de viajes</a>
+	<!-- jQuery library -->
+	<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+
+	<!-- Latest compiled JavaScript -->
+	<script
+	src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+	
+	<!-- CSS -->
+	<link rel="stylesheet" href="css/log_register.css">
+	<link rel="stylesheet" href="css/alerts.css">
+
+	<title>ShareMyTrip - Inicio</title>
+	
+	<script type="text/javascript">
+	$(function () {
+		  $('[data-toggle="tooltip"]').tooltip()
+		})
+		
+	$(document).ready(function(){
+
+    $( ".update-close" ).click(function() {
+        $(this).parent().parent().hide();
+    });
+
+});
+	</script>
+</head>
+<body>
+
+	<%@ include file="menu_publico.jsp"%>
+	
+	<a id="listarViajes" href="listarViajes">Lista de viajes</a>
 </body>
 </html>

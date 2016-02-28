@@ -17,8 +17,10 @@ public class ValidarseAction implements Accion {
 		
 		String resultado="EXITO";
 		String nombreUsuario=request.getParameter("nombreUsuario");
+//		request.setAttribute("error", "El usuario que ha introducido no es correcto o no esta registrado");
+		
 		HttpSession session=request.getSession();
-		if (session.getAttribute("user")==null) {
+		if (session.getAttribute("user")==null) { //No existe session
 			UserDao dao = PersistenceFactory.newUserDao();
 			User userByLogin = dao.findByLogin(nombreUsuario);
 			if (userByLogin!=null) {
@@ -28,6 +30,7 @@ public class ValidarseAction implements Accion {
 				Log.info("El usuario [%s] ha iniciado sesión",nombreUsuario);
 			}
 			else {
+				request.setAttribute("error", "El usuario no esta registrado");
 				session.invalidate();
 				Log.info("El usuario [%s] no está registrado",nombreUsuario);
 				resultado="FRACASO";
