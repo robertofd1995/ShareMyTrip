@@ -26,7 +26,7 @@
 </head>
 <body>
 
-	<form class="form-horizontal">
+	<form id="registrarUsuario" action="registrarUsuario" method="post" class="form-horizontal">
 		<fieldset>
 
 			<!-- Form Name -->
@@ -34,10 +34,10 @@
 
 			<!-- Nombre de usuario-->
 			<div class="form-group">
-				<label class="col-md-4 control-label" for="nombreUser">Nombre
+				<label class="col-md-4 control-label" for="nombreUsuario">Nombre
 					de usuario</label>
 				<div class="col-md-4">
-					<input id="nombreUser" name="nombreUser" type="text"
+					<input id="nombreUser" name="nombreUsuario" type="text"
 						placeholder="nombre de usuario" class="form-control input-md"
 						required="">
 
@@ -56,9 +56,9 @@
 
 			<!-- Apellidos-->
 			<div class="form-group">
-				<label class="col-md-4 control-label" for="apellidos ">Apellidos</label>
+				<label class="col-md-4 control-label" for="apellidos">Apellidos</label>
 				<div class="col-md-4">
-					<input id="apellidos " name="apellidos " type="text"
+					<input id="apellidos " name="apellidos" type="text"
 						placeholder="apellidos" class="form-control input-md">
 
 				</div>
@@ -100,7 +100,8 @@
 			<div class="form-group">
 				<label class="col-md-4 control-label" for="button1id"></label>
 				<div class="col-md-8">
-					<button id="button1id" name="button1id" class="btn btn-success">Registrarse</button>
+					<button id="button1id" name="button1id" class="btn btn-success"
+					type="submit">Registrarse</button>
 					<button id="cancel" name="cancel" class="btn btn-danger">Cancelar</button>
 				</div>
 			</div>

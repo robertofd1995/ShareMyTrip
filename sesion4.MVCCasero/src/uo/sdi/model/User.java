@@ -18,6 +18,18 @@ public class User {
 	private String email;
 	
 	private UserStatus status;
+	
+	public User(){}
+
+	public User(String nombreUsuario, String password, String nombre,
+			String apellidos, String correo) {
+		setLogin(nombreUsuario);
+		setPassword(password);
+		setName(nombre);
+		setSurname(apellidos);
+		setEmail(correo);
+		setStatus(UserStatus.ACTIVE);
+	}
 
 	public String getEmail() {
 		return email;
