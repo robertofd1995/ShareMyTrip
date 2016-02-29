@@ -76,7 +76,7 @@
                     <button class="btn btn-success btn-block"><span class="fa fa-plus-circle"></span> (Ver Viaje *) </button>
                 </div>
                 <div class="col-xs-12 col-sm-4 emphasis">                   
-                    <a class="btn btn-info btn-block" href="menu.jsp" style="margin-top: 6em;">
+                    <a class="btn btn-info btn-block" href="menu_privado.jsp" style="margin-top: 6em;">
                     <span class="fa fa-user"></span> Volver al Menu </a>
                 </div>
                 <div class="col-xs-12 col-sm-4 emphasis">
@@ -90,7 +90,7 @@
                         <span class="sr-only">Toggle Dropdown</span>
                       </button>
                       <ul class="dropdown-menu text-left" role="menu">
-                        <li><a href="modificarDatos.jsp"><span class="fa fa-envelope pull-right"></span> Modificar datos personales </a></li>
+                        <li><a href="modificarDatos"><span class="fa fa-envelope pull-right"></span> Modificar datos personales </a></li>
                         <li><a href="#"><span class="fa fa-list pull-right"></span> Registrar Viaje  </a></li>
                         <li class="divider"></li>
                         <li><a href="#"><span class="fa fa-warning pull-right"></span>Report this user for spam *</a></li>

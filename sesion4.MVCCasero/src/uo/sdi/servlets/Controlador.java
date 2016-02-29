@@ -54,6 +54,7 @@ public class Controlador extends javax.servlet.http.HttpServlet {
 			Log.error("Se ha producido alguna excepción no manejada [%s]",e);
 			
 			jspSiguiente="/error.jsp";
+			//throw e;
 		}
 			
 		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(jspSiguiente); 
@@ -103,6 +104,7 @@ public class Controlador extends javax.servlet.http.HttpServlet {
 		
 		Map<String,Accion> mapaRegistrado=new HashMap<String,Accion>();
 		mapaRegistrado.put("modificarDatos", new ModificarDatosAction());
+		mapaRegistrado.put("cerrarSession", new CerrarSessionAction());
 		mapaDeAcciones.put("REGISTRADO", mapaRegistrado);
 	}
 	
@@ -125,6 +127,10 @@ public class Controlador extends javax.servlet.http.HttpServlet {
 		resJSP.put("EXITO","/menu_privado.jsp"); //TODO corregir 
 		opcionResJSP.put("registrarUsuario", resJSP);
 		
+		resJSP=new HashMap<String, String>();
+		resJSP.put("EXITO","/menu.jsp");
+		opcionResJSP.put("cerrarSession", resJSP);
+		
 		mapaDeNavegacion.put("PUBLICO",opcionResJSP);
 		
 		// Crear mapas auxiliares vacíos
@@ -135,7 +141,8 @@ public class Controlador extends javax.servlet.http.HttpServlet {
 		resJSP.put("EXITO","/perfil.jsp");
 		opcionResJSP.put("validarse", resJSP);
 		resJSP=new HashMap<String, String>();
-		resJSP.put("EXITO","/perfil.jsp");
+		resJSP.put("EXITO","/modificarDatos.jsp");
+		resJSP.put("FRACASO","/menu.jsp");
 		opcionResJSP.put("modificarDatos", resJSP);
 		
 		mapaDeNavegacion.put("REGISTRADO",opcionResJSP);

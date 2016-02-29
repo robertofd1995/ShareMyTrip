@@ -14,7 +14,7 @@
   </context-param>
   <context-param>
    <param-name>creador</param-name>
-    <param-value>roberto_fernandez_diaz</param-value>
+    <param-value>roberto_fernandez_diaz y Damian</param-value>
   </context-param>
   <listener>
     <listener-class>uo.sdi.listener.LoggingInitialization</listener-class>
