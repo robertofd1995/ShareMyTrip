@@ -62,7 +62,7 @@ public class Controlador extends javax.servlet.http.HttpServlet {
 			
 			Log.error("Se ha producido alguna excepción no manejada [%s]",e);
 			
-			jspSiguiente="/login.jsp";
+			jspSiguiente="/error.jsp";
 		}
 			
 		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(jspSiguiente); 
@@ -109,6 +109,8 @@ public class Controlador extends javax.servlet.http.HttpServlet {
 		mapaPublico.put("listarViajes", new ListarViajesAction());
 		mapaPublico.put("registrase", new RegistrarseAction());
 		mapaPublico.put("verViajePublico", new VerViajePublicoAction());
+		mapaPublico.put("registrarUsuario", new RegistrarUsuarioAction());
+
 		mapaDeAcciones.put("PUBLICO", mapaPublico);
 		
 		Map<String,Accion> mapaRegistrado=new HashMap<String,Accion>();
@@ -131,8 +133,7 @@ public class Controlador extends javax.servlet.http.HttpServlet {
 		Map<String, String> resJSP=new HashMap<String, String>();
 
 		// Mapa de navegación del público
-		//Validarse
-		resJSP.put("FRACASO","/login.jsp");
+		resJSP.put("FRACASO","/menu.jsp");
 		opcionResJSP.put("validarse", resJSP);
 		//ListarViajes
 		resJSP=new HashMap<String, String>();
@@ -142,11 +143,9 @@ public class Controlador extends javax.servlet.http.HttpServlet {
 		resJSP=new HashMap<String, String>();
 		resJSP.put("EXITO","/verViajePublico.jsp");
 		opcionResJSP.put("verViajePublico", resJSP);
-		//Registrarse
 		resJSP=new HashMap<String, String>();
-		resJSP.put("EXITO","/registro.jsp");
-		opcionResJSP.put("registrase", resJSP);
-		
+		resJSP.put("EXITO","/menu_privado.jsp"); //TODO corregir 
+		opcionResJSP.put("registrarUsuario", resJSP);
 		
 		mapaDeNavegacion.put("PUBLICO",opcionResJSP);
 		
@@ -155,8 +154,8 @@ public class Controlador extends javax.servlet.http.HttpServlet {
 		resJSP=new HashMap<String, String>();
 		
 		// Mapa de navegación de usuarios registrados
-		//Validarse
-		resJSP.put("EXITO","/principal.jsp");
+
+		resJSP.put("EXITO","/perfil.jsp");
 		opcionResJSP.put("validarse", resJSP);
 		//Ver viaje registrado
 		resJSP=new HashMap<String, String>();
@@ -164,7 +163,7 @@ public class Controlador extends javax.servlet.http.HttpServlet {
 		opcionResJSP.put("verViajeRegistrado", resJSP);
 		//Modificar datos
 		resJSP=new HashMap<String, String>();
-		resJSP.put("EXITO","/principal.jsp");
+		resJSP.put("EXITO","/perfil.jsp");
 		opcionResJSP.put("modificarDatos", resJSP);
 		//Solicitar plaza
 		resJSP=new HashMap<String, String>();
