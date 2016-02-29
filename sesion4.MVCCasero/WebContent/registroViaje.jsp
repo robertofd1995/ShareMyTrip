@@ -37,7 +37,7 @@
 				<label class="col-md-4 control-label" for="calle_salida">Calle</label>
 				<div class="col-md-4">
 					<input id="calle_salida" name="calle_salida" type="text"
-						placeholder="calle_salida" class="form-control input-md"
+						placeholder="Nombre de la calle" class="form-control input-md"
 						required="">
 
 				</div>
@@ -84,7 +84,7 @@
 			</div>
 			<!-- Coordenadas salida -->
 			<div class="form-group">
-				<label class="col-md-4 control-label" for="coordenadas_salida">Coordenadas salida</label>
+				<label class="col-md-4 control-label" for="coordenadas_salida">Coordenadas salida (latidud:longitud)</label>
 				<div class="col-md-4">
 					<input id="coordenadas_salida" name="coordenadas_salida" type="text"
 						placeholder="coordenadas_salida" class="form-control input-md" required="">
@@ -93,10 +93,10 @@
 			</div>
 			<!-- Fecha y hora salida -->
 			<div class="form-group">
-				<label class="col-md-4 control-label" for="fecha_hora_salida">Fecha y hora 
+				<label class="col-md-4 control-label" for="fecha_salida">Fecha y hora 
 				de llegada (dd/mm/aaaa hh:mm)</label>
 				<div class="col-md-4">
-					<input id="fecha_hora_salida" name="fecha_hora_salida" type="text"
+					<input id="fecha_salida" name="fecha_salida" type="text"
 						placeholder="fecha_hora_salida" class="form-control input-md" required="">
 
 				</div>
@@ -156,7 +156,7 @@
 			</div>
 			<!-- Coordenadas llegada -->
 			<div class="form-group">
-				<label class="col-md-4 control-label" for="coordenadas_llegada">Coordenadas llegada</label>
+				<label class="col-md-4 control-label" for="coordenadas_llegada">Coordenadas llegada(latitud:longitud)</label>
 				<div class="col-md-4">
 					<input id="coordenadas_llegada" name="coordenadas_llegada" type="text"
 						placeholder="coordenadas_llegada" class="form-control input-md" required="">
@@ -166,10 +166,10 @@
 			
 			<!-- Fecha y hora llegada -->
 			<div class="form-group">
-				<label class="col-md-4 control-label" for="fecha_hora_llegada">Fecha y hora 
+				<label class="col-md-4 control-label" for="fecha_llegada">Fecha y hora 
 				de llegada (dd/mm/aaaa hh:mm)</label>
 				<div class="col-md-4">
-					<input id="fecha_hora_llegada" name="fecha_hora_llegada" type="text"
+					<input id="fecha_llegada" name="fecha_llegada" type="text"
 						placeholder="fecha_hora_llegada" class="form-control input-md" required="">
 
 				</div>

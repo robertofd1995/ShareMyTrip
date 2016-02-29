@@ -13,6 +13,7 @@ import uo.sdi.acciones.Accion;
 import uo.sdi.model.AddressPoint;
 import uo.sdi.model.Trip;
 import uo.sdi.model.User;
+import uo.sdi.model.Waypoint;
 import uo.sdi.persistence.PersistenceFactory;
 import uo.sdi.persistence.TripDao;
 
@@ -31,13 +32,15 @@ public class RegistrarViajeAction implements Accion {
 				request.getParameter("provincia_salida"), 
 				request.getParameter("pais_salida"),
 				request.getParameter("codigo_postal_salida"),
-				null);
+				new Waypoint(Double.parseDouble(request.getParameter("coordenadas_salida")),
+						Double.parseDouble(request.getParameter("coordenadas_salida"))));
 		AddressPoint llegada = new AddressPoint(request.getParameter("calle_llegada"), 
 				request.getParameter("ciudad_llegada"), 
 				request.getParameter("provincia_llegada"), 
 				request.getParameter("pais_llegada"),
 				request.getParameter("codigo_postal_llegada"),
-				null);
+				new Waypoint(Double.parseDouble(request.getParameter("coordenadas_llegada")),
+						Double.parseDouble(request.getParameter("coordenadas_llegada"))));
 		Date fechaSalida = null,fechaLlegada= null,fechaLimite = null;
 		try{
 		
@@ -45,7 +48,7 @@ public class RegistrarViajeAction implements Accion {
 			fechaLlegada = new SimpleDateFormat("dd/MM/yyyy HH:mm").parse(request.getParameter("fecha_llegada"));
 			fechaLimite = new SimpleDateFormat("dd/MM/yyyy HH:mm").parse(request.getParameter("fecha_limite"));
 		} catch (ParseException e) {
-			request.setAttribute("error", "Debe rellenar todos los campos obligatorios");
+			request.setAttribute("error", "Las fechas introducidas no cumplen el formato");
 			Log.info("Fechas introducidas incorrectas al registrar un viaje");
 			resultado = "FRACASO";
 		}
