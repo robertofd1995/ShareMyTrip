@@ -18,7 +18,7 @@ import uo.sdi.acciones.publico.VerViajePublicoAction;
 import uo.sdi.acciones.registrado.CerrarSesionAction;
 import uo.sdi.acciones.registrado.ConfirmarPasajerosAction;
 import uo.sdi.acciones.registrado.ModificarDatosAction;
-import uo.sdi.acciones.registrado.RegistrarViajeAction;
+import uo.sdi.acciones.RegistrarViajeAction;
 import uo.sdi.acciones.registrado.SolicitarPlazaAction;
 import uo.sdi.acciones.registrado.VerViajeRegistradoAction;
 
@@ -177,7 +177,7 @@ public class Controlador extends javax.servlet.http.HttpServlet {
 		opcionResJSP.put("confirmarPasajeros", resJSP);
 		//Registrar viaje
 		resJSP=new HashMap<String, String>();
-		resJSP.put("EXITO","/registrarViaje.jsp");
+		resJSP.put("EXITO","/perfil.jsp");
 		opcionResJSP.put("registrarViaje", resJSP);
 		//Cerrar sesion
 		resJSP=new HashMap<String, String>();

@@ -32,7 +32,8 @@ public class RegistrarUsuarioAction implements Accion {
 			request.setAttribute("error", "Debe rellenar todos los campos obligatorios");
 			resultado = "FRACASO";
 			Log.info("Campos vacios al intentar registrar usuario ");
-		} else
+		} 
+		else
 		{
 			if (session.getAttribute("user") == null)
 			{

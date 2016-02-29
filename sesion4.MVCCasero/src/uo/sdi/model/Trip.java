@@ -1,6 +1,9 @@
 package uo.sdi.model;
 
+import java.text.DateFormat;
 import java.util.Date;
+
+import org.jboss.resteasy.util.DateUtil;
 
 /**
  * This class is not an entity, it is a DTO with the same fields as 
@@ -26,6 +29,27 @@ public class Trip {
 	private TripStatus status;
 	
 	private Long promoterId;
+	
+	public Trip(){
+		
+	}
+
+	public Trip(AddressPoint salida, AddressPoint llegada, Date fechaSalida,
+			Date fechaLlegada, Date fechaLimite, Double coste,
+			String comentarios, Integer plazasMaximas, Integer plazasDisponibles, Long userId) {
+		setDeparture(salida);
+		setDestination(llegada);
+		setArrivalDate(fechaLlegada);
+		setDepartureDate(fechaSalida);
+		setClosingDate(fechaLimite);
+		setMaxPax(plazasMaximas);
+		setAvailablePax(plazasDisponibles);
+		setComments(comentarios);
+		setEstimatedCost(coste);
+		setStatus(TripStatus.OPEN);
+		setPromoterId(userId);
+		
+	}
 
 	public AddressPoint getDeparture() {
 		return departure;
