@@ -17,12 +17,16 @@
 				<input id="textinput" name="nombreUsuario" type="text"
 					align="middle" placeholder="User Name"
 					class="form-control input-md">
+				<input id="passwordinput" name="pass" type="password"
+				 placeholder="password" class="form-control input-md" requiered="">
+
 				<button id="iniciarSession" type="submit" value="Enviar"
 					align="right" class="btn btn-default" data-toggle="tooltip"
 					data-placement="top" title="Inicie session">Log in</button>
-					
+
 				<a href="registroUsuario.jsp" class="btn btn-primary btn-info">
-				Registrarse <span class="glyphicon glyphicon-user"></span></a>
+					Registrarse <span class="glyphicon glyphicon-user"></span>
+				</a>
 			</div>
 		</div>
 
@@ -35,7 +39,7 @@
 						<i class="glyphicon glyphicon-warning-sign"></i>
 					</div>
 					<div class="update-text">
-						<strong>Warning</strong>  ${error}
+						<strong>Warning</strong> ${error}
 					</div>
 				</div>
 			</div>
