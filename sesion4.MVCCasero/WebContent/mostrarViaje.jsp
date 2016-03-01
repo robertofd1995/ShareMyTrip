@@ -22,13 +22,12 @@
 			<td>Comentarios</td>
 			<td><a href="solicitarPlaza?id=${viaje.id}">Solicitar plaza</a></td>
 		</tr>
-		<c:forEach var="entry" items="${seats}" varStatus="i">
+		<c:forEach var="entry" items="${viajeros}" varStatus="i">
 			<tr id="item_${i.index}">
 				<td>Pasajero</td>
-				<td>${entry.userId}</td>
-				<td>${entry.comment}</td>
-				<td>${entry.status}</td>
-				
+				<td>${entry.name},${entry.surname}</td>
+				<td>pasajero ${i.index }</td>
+				<td>${entry.email}</td>
 			</tr>
 		</c:forEach>
 	</table>

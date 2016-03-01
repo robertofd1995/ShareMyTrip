@@ -1,5 +1,6 @@
 package uo.sdi.acciones;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -9,6 +10,7 @@ import alb.util.log.Log;
 import uo.sdi.acciones.Accion;
 import uo.sdi.model.Rating;
 import uo.sdi.model.Seat;
+import uo.sdi.model.SeatStatus;
 import uo.sdi.model.Trip;
 import uo.sdi.model.User;
 import uo.sdi.persistence.PersistenceFactory;
@@ -19,8 +21,8 @@ public class VerViajeAction implements Accion {
 	public String execute(HttpServletRequest request,
 			HttpServletResponse response) {
 		Trip viaje;
-		List<Rating> rating;
 		List<Seat> seats;
+		List<User> viajeros;
 		User promotor;
 		try{
 			viaje = PersistenceFactory.newTripDao().findById(Long.parseLong(request.getParameter("id")));
@@ -28,11 +30,12 @@ public class VerViajeAction implements Accion {
 			promotor = PersistenceFactory.newUserDao().findById(viaje.getPromoterId());
 			request.setAttribute("promotor", promotor);
 			seats = PersistenceFactory.newSeatDao().findAll();
-			if(seats!=null){
+			if(!seats.isEmpty()){
+				viajeros = new ArrayList<User>();
 				for(Seat s:seats)
-					if(s.getTripId()!=viaje.getId())
-						seats.remove(s);
-				request.setAttribute("seats", seats);
+					if(s.getTripId()==viaje.getId() && s.getStatus().equals(SeatStatus.ACCEPTED))
+						viajeros.add(PersistenceFactory.newUserDao().findById(s.getUserId()));
+				request.setAttribute("viajeros", viajeros);
 			}
 			Log.debug("Obtenido viaje con id [%d]", viaje.getId());		
 		}catch(Exception e){
