@@ -91,7 +91,7 @@
                       </button>
                       <ul class="dropdown-menu text-left" role="menu">
                         <li><a href="modificarDatos"><span class="fa fa-envelope pull-right"></span> Modificar datos personales </a></li>
-                        <li><a href="#"><span class="fa fa-list pull-right"></span> Registrar Viaje  </a></li>
+                        <li><a href="retistroViaje.jsp"><span class="fa fa-list pull-right"></span> Registrar Viaje  </a></li>
                         <li class="divider"></li>
                         <li><a href="#"><span class="fa fa-warning pull-right"></span>Report this user for spam *</a></li>
                         <!-- <li class="divider"></li>

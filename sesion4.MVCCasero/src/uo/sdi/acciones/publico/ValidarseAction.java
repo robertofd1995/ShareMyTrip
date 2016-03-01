@@ -1,9 +1,10 @@
-package uo.sdi.acciones;
+package uo.sdi.acciones.publico;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import uo.sdi.acciones.Accion;
 import uo.sdi.model.User;
 import uo.sdi.persistence.PersistenceFactory;
 import uo.sdi.persistence.UserDao;
