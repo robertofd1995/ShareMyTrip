@@ -13,8 +13,8 @@
 			<th>Fecha</th>
 			<th>origen</th>
 		</tr>
-		<c:forEach items="${misViajes}" var="entry" varStatus="i">
-			<tr id="item_${i.index}">
+		<c:forEach items="${misViajes}" var="entry" >
+			<tr>
 				<td>${entry.key}</td>
 				<td>${entry.value.departureDate}</td>
 				<td>${entry.value.departure.city}</td>

@@ -20,21 +20,21 @@ public class VerMisViajesAction implements Accion {
 	public String execute(HttpServletRequest request,
 			HttpServletResponse response) {
 		User usuario;
-		List<Trip> auxiliarPromotor;
+		List<Trip> todos;
 		Map<String,Trip> misViajes;
-		List<Seat> auxiliarPasajero;
+		List<Seat> todosPasajeros;
 		try{
 			usuario = (User) request.getSession().getAttribute("user");
-			auxiliarPromotor = PersistenceFactory.newTripDao().findAll();
+			todos = PersistenceFactory.newTripDao().findAll();
 			misViajes = new HashMap<String,Trip>();
-			for(Trip t:auxiliarPromotor)
-				if(t.getPromoterId()==usuario.getId())
+			for(Trip t:todos)
+				if(t.getPromoterId().equals(usuario.getId()))
 					misViajes.put("PROMOTOR",t);
 
-			auxiliarPasajero = PersistenceFactory.newSeatDao().findAll();
-			for(Seat s:auxiliarPasajero)
+			todosPasajeros = PersistenceFactory.newSeatDao().findAll();
+			for(Seat s:todosPasajeros)
 				if(s.getUserId()==usuario.getId())
-					for(Trip t:auxiliarPromotor)
+					for(Trip t:todos)
 						if(s.getTripId()==t.getId())
 							misViajes.put(s.getStatus().name(),t);
 			request.setAttribute("misViajes", misViajes);	
