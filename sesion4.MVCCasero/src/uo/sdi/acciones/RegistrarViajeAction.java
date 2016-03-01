@@ -32,15 +32,15 @@ public class RegistrarViajeAction implements Accion {
 				request.getParameter("provincia_salida"), 
 				request.getParameter("pais_salida"),
 				request.getParameter("codigo_postal_salida"),
-				new Waypoint(Double.parseDouble(request.getParameter("coordenadas_salida")),
-						Double.parseDouble(request.getParameter("coordenadas_salida"))));
+				new Waypoint(Double.parseDouble(request.getParameter("latitud_salida")),
+						Double.parseDouble(request.getParameter("longitud_salida"))));
 		AddressPoint llegada = new AddressPoint(request.getParameter("calle_llegada"), 
 				request.getParameter("ciudad_llegada"), 
 				request.getParameter("provincia_llegada"), 
 				request.getParameter("pais_llegada"),
 				request.getParameter("codigo_postal_llegada"),
-				new Waypoint(Double.parseDouble(request.getParameter("coordenadas_llegada")),
-						Double.parseDouble(request.getParameter("coordenadas_llegada"))));
+				new Waypoint(Double.parseDouble(request.getParameter("latitud_llegada")),
+						Double.parseDouble(request.getParameter("longitud_llegada"))));
 		Date fechaSalida = null,fechaLlegada= null,fechaLimite = null;
 		try{
 		

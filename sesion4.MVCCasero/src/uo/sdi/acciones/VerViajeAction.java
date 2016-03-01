@@ -40,6 +40,7 @@ public class VerViajeAction implements Accion {
 			Log.debug("Obtenido viaje con id [%d]", viaje.getId());		
 		}catch(Exception e){
 			Log.error("No se ha podido obtener el viaje");
+			request.setAttribute("error", "No se puede obtener el viaje");
 		}
 		return "EXITO";
 	}

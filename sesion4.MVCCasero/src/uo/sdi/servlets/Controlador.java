@@ -118,6 +118,7 @@ public class Controlador extends javax.servlet.http.HttpServlet {
 		mapaRegistrado.put("confirmarPasajeros", new ConfirmarPasajerosAction());
 		mapaRegistrado.put("registrarViaje", new RegistrarViajeAction());
 		mapaRegistrado.put("cerrarSession", new CerrarSessionAction());
+		mapaRegistrado.put("verMisViajes", new VerMisViajesAction());
 
 		mapaDeAcciones.put("REGISTRADO", mapaRegistrado);
 	}
@@ -143,7 +144,7 @@ public class Controlador extends javax.servlet.http.HttpServlet {
 		resJSP.put("EXITO","/menu.jsp");
 		opcionResJSP.put("mostrarViaje", resJSP);
 		resJSP=new HashMap<String, String>();
-		resJSP.put("EXITO","/menu_privado.jsp"); //TODO corregir 
+		resJSP.put("EXITO","/perfil.jsp"); //TODO corregir 
 		opcionResJSP.put("registrarUsuario", resJSP);
 		
 		resJSP=new HashMap<String, String>();
@@ -172,11 +173,11 @@ public class Controlador extends javax.servlet.http.HttpServlet {
 		//Modificar datos
 		resJSP=new HashMap<String, String>();
 		resJSP.put("EXITO","/modificarDatos.jsp");
-		resJSP.put("FRACASO","/menu.jsp");
+		resJSP.put("FRACASO","/perfil.jsp");
 		opcionResJSP.put("modificarDatos", resJSP);
 		//Solicitar plaza
 		resJSP=new HashMap<String, String>();
-		resJSP.put("EXITO","/solicitarPlaza.jsp");
+		resJSP.put("EXITO","/perfil.jsp");
 		resJSP.put("FRACASO","/viajeCompleto.jsp");
 		opcionResJSP.put("solicitarPlaza", resJSP);
 		//Confirmar pasajeros
@@ -184,6 +185,10 @@ public class Controlador extends javax.servlet.http.HttpServlet {
 		resJSP.put("EXITO","/confirmarPasajeros.jsp");
 		resJSP.put("FRACASO","/errorConfirmarPasajeros.jsp");
 		opcionResJSP.put("confirmarPasajeros", resJSP);
+		//Ver mis viajes
+		resJSP=new HashMap<String, String>();
+		resJSP.put("EXITO","/misViajes.jsp");
+		opcionResJSP.put("verMisViajes", resJSP);
 		//Registrar viaje
 		resJSP=new HashMap<String, String>();
 		resJSP.put("EXITO","/perfil.jsp");

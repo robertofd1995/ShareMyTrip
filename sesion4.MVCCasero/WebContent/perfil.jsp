@@ -73,7 +73,7 @@
                 <div class="col-xs-12 col-sm-4 emphasis">
                     <h2><strong> TODO? </strong></h2>                    
                     <p><small>Ultimo viaje</small></p>
-                    <button class="btn btn-success btn-block"><span class="fa fa-plus-circle"></span> (Ver Viaje *) </button>
+                    <a href="verMisViajes"><button class="btn btn-success btn-block"><span class="fa fa-plus-circle"></span> (Ver Viaje *)</button></a>
                 </div>
                 <div class="col-xs-12 col-sm-4 emphasis">                   
                     <a class="btn btn-info btn-block" href="menu_privado.jsp" style="margin-top: 6em;">
@@ -91,7 +91,7 @@
                       </button>
                       <ul class="dropdown-menu text-left" role="menu">
                         <li><a href="modificarDatos"><span class="fa fa-envelope pull-right"></span> Modificar datos personales </a></li>
-                        <li><a href="retistroViaje.jsp"><span class="fa fa-list pull-right"></span> Registrar Viaje  </a></li>
+                        <li><a href="registroViaje.jsp"><span class="fa fa-list pull-right"></span> Registrar Viaje  </a></li>
                         <li class="divider"></li>
                         <li><a href="#"><span class="fa fa-warning pull-right"></span>Report this user for spam *</a></li>
                         <!-- <li class="divider"></li>

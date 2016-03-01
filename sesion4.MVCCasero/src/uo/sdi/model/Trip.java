@@ -1,9 +1,6 @@
 package uo.sdi.model;
 
-import java.text.DateFormat;
 import java.util.Date;
-
-import org.jboss.resteasy.util.DateUtil;
 
 /**
  * This class is not an entity, it is a DTO with the same fields as 

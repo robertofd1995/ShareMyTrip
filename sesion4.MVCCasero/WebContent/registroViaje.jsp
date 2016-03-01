@@ -28,7 +28,7 @@
 
 	<form id="registrarViaje" action="registrarViaje" method="post" class="form-horizontal">
 		<fieldset>
-		<h1>Dirección de salida</h1>
+		<h2>Dirección de salida</h2>
 			<!-- Form Name -->
 			<legend>Formulario de creación de nuevo viaje</legend>
 
@@ -82,15 +82,24 @@
 
 				</div>
 			</div>
+			
 			<!-- Coordenadas salida -->
+			<h3>Coordenadas salida</h3>
 			<div class="form-group">
-				<label class="col-md-4 control-label" for="coordenadas_salida">Coordenadas salida (latidud:longitud)</label>
+				<label class="col-md-4 control-label" for="latitud_salida">Latitud</label>
 				<div class="col-md-4">
-					<input id="coordenadas_salida" name="coordenadas_salida" type="text"
-						placeholder="coordenadas_salida" class="form-control input-md" required="">
-
+					<input id="latitud_salida" name="latitud_salida" type="text"
+						placeholder="P.e 50.395" class="form-control input-md" required="">
 				</div>
 			</div>
+			<div class="form-group">
+				<label class="col-md-4 control-label" for="longitud_salida">Longitud</label>
+				<div class="col-md-4">
+					<input id="longitud_salida" name="longitud_salida" type="text"
+						placeholder="P.e 50.395" class="form-control input-md" required="">
+				</div>
+			</div>
+
 			<!-- Fecha y hora salida -->
 			<div class="form-group">
 				<label class="col-md-4 control-label" for="fecha_salida">Fecha y hora 
@@ -155,12 +164,19 @@
 				</div>
 			</div>
 			<!-- Coordenadas llegada -->
+			<h3>Coordenadas llegada</h3>
 			<div class="form-group">
-				<label class="col-md-4 control-label" for="coordenadas_llegada">Coordenadas llegada(latitud:longitud)</label>
+				<label class="col-md-4 control-label" for="latitud_llegada">Latitud</label>
 				<div class="col-md-4">
-					<input id="coordenadas_llegada" name="coordenadas_llegada" type="text"
-						placeholder="coordenadas_llegada" class="form-control input-md" required="">
-
+					<input id="latitud_llegada" name="latitud_llegada" type="text"
+						placeholder="P.e 50.395" class="form-control input-md" required="">
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-md-4 control-label" for="longitud_llegada">Longitud</label>
+				<div class="col-md-4">
+					<input id="longitud_llegada" name="longitud_llegada" type="text"
+						placeholder="P.e 50.395" class="form-control input-md" required="">
 				</div>
 			</div>
 			

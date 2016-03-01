@@ -12,21 +12,21 @@
 		<tr>
 			<th>Rol</th>
 			<th>Nombre</th>
-			<th>Puntuacion</th>
+			<th>Plazas libres</th>
 			<th>Comentarios</th>
 		</tr>
 		<tr>
 			<td>Promotor</td>
 			<td>${promotor.name},${promotor.surname}</td>
-			<td>Puntuacion...</td>
-			<td>Comentarios</td>
+			<td>${viaje.availablePax }</td>
+			<td>...</td>
 			<td><a href="solicitarPlaza?id=${viaje.id}">Solicitar plaza</a></td>
 		</tr>
 		<c:forEach var="entry" items="${viajeros}" varStatus="i">
 			<tr id="item_${i.index}">
 				<td>Pasajero</td>
 				<td>${entry.name},${entry.surname}</td>
-				<td>pasajero ${i.index }</td>
+				<td>pasajero ${i.index}</td>
 				<td>${entry.email}</td>
 			</tr>
 		</c:forEach>
