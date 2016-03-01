@@ -73,4 +73,11 @@ public class RegistrarViajeAction implements Accion {
 		return resultado;
 	}
 
+	@Override
+	public String toString() {
+		return getClass().getName();
+	}
+	
+	
+
 }
