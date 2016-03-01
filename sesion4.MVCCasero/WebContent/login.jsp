@@ -29,7 +29,7 @@
 </head>
 <body>
 
-	<%@ include file="menu_publico.jsp"%>
+	<%@ include file="menu.jsp"%>
 	
 	<a id="listarViajes" href="listarViajes">Lista de viajes</a>
 </body>
