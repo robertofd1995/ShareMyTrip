@@ -76,15 +76,16 @@
 							</p>
 							<a href="verMisViajes"><button
 									class="btn btn-success btn-block">
-									<span class="fa fa-plus-circle"></span> (Ver Viaje *)
+									<span class="fa fa-plus-circle"></span> Ver Mis Viajes
 								</button></a>
 						</div>
 						<div class="col-xs-12 col-sm-4 emphasis">
-							<a class="btn btn-warning btn-block" href="cerrarSession"
-								style="margin-top: 6em;"> <span class="fa fa-user"></span>
-								Cerrar Session
+							<a class="btn btn-default btn-block" href="listarViajes"
+								style="margin-top: 5.8em;"> <span class="glyphicon glyphicon-plane"></span>
+								Ver Viajes
 							</a>
 						</div>
+						
 						<div class="col-xs-12 col-sm-4 emphasis">
 							<h2>
 								<strong>${contador}</strong>
@@ -93,13 +94,9 @@
 								<small>Usuario nº</small>
 							</p>
 							<div class="btn-group dropup btn-block">
-								<button type="button" class="btn btn-primary">
-									<span class="fa fa-gear"></span> Opciones
-								</button>
 								<button type="button" class="btn btn-primary dropdown-toggle"
-									data-toggle="dropdown" style="border-bottom-width: 1.25em;">
-									<span class="caret"></span> <span class="sr-only">Toggle
-										Dropdown</span>
+									data-toggle="dropdown" >
+									<span class="fa fa-gear"></span> Opciones
 								</button>
 								<ul class="dropdown-menu text-left" role="menu">
 									<li><a href="modificarDatos"><span
@@ -115,6 +112,14 @@
 								</ul>
 							</div>
 						</div>
+						
+						<div class="col-xs-12 col-sm-4 emphasis">
+							<a class="btn btn-warning btn-block" href="cerrarSession"
+								style="margin-top: 6em;"> <span class="fa fa-user"></span>
+								Cerrar Session
+							</a>
+						</div>
+						
 					</div>
 				</div>
 			</div>
