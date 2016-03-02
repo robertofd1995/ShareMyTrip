@@ -10,3 +10,18 @@
 <!-- Latest compiled JavaScript -->
 <script
 	src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+	
+<script type="text/javascript">
+<!-- Codigo js para habilitar los mensajes de error -->
+$(function() {
+	$('[data-toggle="tooltip"]').tooltip()
+})
+	
+	$(document).ready(function() {
+
+		$(".update-close").click(function() {
+			$(this).parent().parent().hide();
+		});
+
+	});
+</script>

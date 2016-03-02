@@ -16,11 +16,12 @@
 <link rel="stylesheet" href="css/log_register.css">
 <link rel="stylesheet" href="css/alerts.css">
 
-<script type="text/javascript">$(document).ready(function(){
+<script type="text/javascript">
+	$(document).ready(function() {
 
-    $( ".update-close" ).click(function() {
-        $(this).parent().parent().hide();
-    });
+		$(".update-close").click(function() {
+			$(this).parent().parent().hide();
+		});
 
 	});
 </script>
@@ -61,14 +62,14 @@
 						<li><a href="#">One more separated link</a></li>
 					</ul></li>
 			</ul>
-			
+
 			<!-- <form class="navbar-form navbar-left" role="search">
 				<div class="form-group">
 					<input type="text" class="form-control" placeholder="Search">
 				</div>
 				<button type="submit" class="btn btn-default">Submit</button>
 			</form>  -->
-			
+
 			<ul class="nav navbar-nav navbar-right">
 				<li><p class="navbar-text">Already have an account?</p></li>
 				<li class="dropdown"><a href="#" class="dropdown-toggle"
@@ -114,22 +115,28 @@
 	</div>
 	<!-- /.container-fluid --> </nav>
 
-	<c:if test="${error!=null}">
-
-		<div class="col-md-12">
-			<div class="update-nag">
-				<div class="update-close">X</div>
-				<div class="update-split update-danger">
-					<i class="glyphicon glyphicon-warning-sign"></i>
-				</div>
-				<div class="update-text">
-					<strong>Warning</strong> ${error}
+	
+		<c:if test="${error!=null}">
+			<center>
+			<div class="col-md-12">
+				<div class="update-nag">
+					<div class="update-close">X</div>
+					<div class="update-split update-danger">
+						<i class="glyphicon glyphicon-warning-sign"></i>
+					</div>
+					<div class="update-text">
+						<strong>Warning</strong> ${error}
+					</div>
 				</div>
 			</div>
-		</div>
-	</c:if>
-
-	<a id="listarViajes" href="listarViajes">Lista de viajes</a>
+			</center>
+		</c:if>
+	
+	<!-- <a id="listarViajes" href="listarViajes">Lista de viajes</a>  -->
+	
+	<center style="
+    margin-top: 15em;
+	"><a id="btn" href="listarViajes" >Ver Viajes</a></center>
 
 </body>
 </html>
