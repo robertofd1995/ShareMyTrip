@@ -68,7 +68,7 @@
 						<td>${entry.value.id}</td>
 						<td>${entry.value.departureDate}</td>
 						<td>${entry.value.departure.city}</td>
-						<td></td>
+						<td><a href="cancelarSolicitud?id=${entry.value.id}">Cancelar solicitud</a></td>
 					</tr>
 				</c:when>
 			</c:choose>

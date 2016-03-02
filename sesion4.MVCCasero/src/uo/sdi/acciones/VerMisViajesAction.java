@@ -31,18 +31,20 @@ public class VerMisViajesAction implements Accion {
 			for(Trip t:todos)
 				if(t.getPromoterId().equals(usuario.getId()))
 					misViajes.put("PROMOTOR",t);
+			for(Trip t:todos)
+				if(PersistenceFactory.newApplicationDao().findById(new Long[]{usuario.getId(),t.getId()})!=null)
+					misViajes.put("PENDIENTE", t);
 			todosPasajeros = PersistenceFactory.newSeatDao().findAll();
 			for(Seat s:todosPasajeros)
 				if(s.getUserId().equals(usuario.getId()))
 					for(Trip t:todos)
-						if(s.getTripId().equals(t.getId())){
-							if(PersistenceFactory.newApplicationDao().findById(new Long[]{usuario.getId(),t.getId()})!=null)
-								misViajes.put("PENDIENTE", t);
-							else if(t.getClosingDate().before(new Date()))	
+						if(s.getTripId().equals(t.getId())){						
+							if(t.getClosingDate().before(new Date()))	
 								misViajes.put("SIN_PLAZA", t);
 							else
 								misViajes.put(s.getStatus().name(),t);
 						}
+			
 			request.setAttribute("misViajes", misViajes);	
 		}catch(Exception e){
 			request.setAttribute("error", "No hay viajes asociados al usuario");

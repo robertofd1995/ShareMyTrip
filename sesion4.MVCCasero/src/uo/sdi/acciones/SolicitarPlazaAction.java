@@ -56,7 +56,8 @@ public class SolicitarPlazaAction implements Accion {
 				Log.info("Usuario solicita plaza en un viaje completo");
 			}
 		} catch (Exception e) {
-
+			request.setAttribute("error", "No se ha podido solicitar plaza");
+			Log.info("No se ha solicitado la plaza");
 		}
 		return resultado;
 	}
