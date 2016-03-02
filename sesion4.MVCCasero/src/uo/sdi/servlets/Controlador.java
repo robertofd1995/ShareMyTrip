@@ -228,7 +228,7 @@ public class Controlador extends javax.servlet.http.HttpServlet {
 		resJSP.put("EXITO","/cerrarSesion.jsp");
 		opcionResJSP.put("cerrarSesion", resJSP);
 		//Confirmar solicitud
-<<<<<<< HEAD
+
 			resJSP=new HashMap<String, String>();
 			resJSP.put("EXITO","/perfil.jsp");
 			resJSP.put("FRACASO", "/perfil.jsp");

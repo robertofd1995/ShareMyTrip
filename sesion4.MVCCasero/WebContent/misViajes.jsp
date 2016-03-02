@@ -16,7 +16,6 @@
 			<th>Solicitudes</th>
 			<th>Modificar Viaje</th>
 		</tr>
-<<<<<<< HEAD
 		<c:set var="promotor" scope="page" value="PROMOTOR" />
 		<c:set var="aceptado" scope="page" value="ACCEPTED" />
 		<c:set var="excluido" scope="page" value="EXCLUDED" />
