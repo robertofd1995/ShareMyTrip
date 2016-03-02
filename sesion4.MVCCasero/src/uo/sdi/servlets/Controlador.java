@@ -14,8 +14,10 @@ import alb.util.log.Log;
 import uo.sdi.acciones.*;
 import uo.sdi.acciones.publico.ValidarseAction;
 import uo.sdi.acciones.registrado.ConfirmarPasajerosAction;
+import uo.sdi.acciones.registrado.EliminarViajeAction;
 import uo.sdi.acciones.registrado.ModificarDatosAction;
 import uo.sdi.acciones.registrado.ModificarPasswordAction;
+import uo.sdi.acciones.registrado.ModificarViajeAction;
 import uo.sdi.acciones.RegistrarViajeAction;
 import uo.sdi.model.User;
 
@@ -64,8 +66,6 @@ public class Controlador extends javax.servlet.http.HttpServlet {
 				jspSiguiente="/error.jsp";
 			}
 			Log.error("Se ha producido alguna excepción no manejada [%s]",e);
-			//
-			
 			
 			//throw e;
 		}
@@ -127,6 +127,8 @@ public class Controlador extends javax.servlet.http.HttpServlet {
 		mapaRegistrado.put("registrarViaje", new RegistrarViajeAction());
 		mapaRegistrado.put("cerrarSession", new CerrarSessionAction());
 		mapaRegistrado.put("verMisViajes", new VerMisViajesAction());
+		mapaRegistrado.put("modificarViaje", new ModificarViajeAction());
+		mapaRegistrado.put("eliminarViaje", new EliminarViajeAction());
 		mapaRegistrado.put("confirmarSolicitud", new ConfirmarSolicitudAction());
 		mapaRegistrado.put("denegarSolicitud", new DenegarSolicitudAction());
 		mapaRegistrado.put("verSolicitudes", new VerSolicitudesAction());
@@ -211,11 +213,22 @@ public class Controlador extends javax.servlet.http.HttpServlet {
 		resJSP=new HashMap<String, String>();
 		resJSP.put("EXITO","/perfil.jsp");
 		opcionResJSP.put("registrarViaje", resJSP);
+		//ModificarViaje
+		resJSP=new HashMap<String, String>();
+		resJSP.put("EXITO","/verMisViajes");
+		resJSP.put("FRACASO","/modificarViaje.jsp");
+		opcionResJSP.put("modificarViaje", resJSP);
+		//EliminarViaje
+		resJSP=new HashMap<String, String>();
+		resJSP.put("EXITO","/verMisViajes");
+		resJSP.put("FRACASO","/modificarViaje.jsp");
+		opcionResJSP.put("eliminarViaje", resJSP);
 		//Cerrar sesion
 		resJSP=new HashMap<String, String>();
 		resJSP.put("EXITO","/cerrarSesion.jsp");
 		opcionResJSP.put("cerrarSesion", resJSP);
 		//Confirmar solicitud
+<<<<<<< HEAD
 			resJSP=new HashMap<String, String>();
 			resJSP.put("EXITO","/perfil.jsp");
 			resJSP.put("FRACASO", "/perfil.jsp");
@@ -233,7 +246,6 @@ public class Controlador extends javax.servlet.http.HttpServlet {
 			resJSP.put("EXITO","/perfil.jsp");
 			resJSP.put("FRACASO","/perfil.jsp");
 			opcionResJSP.put("cancelarSolicitud", resJSP);
-			
 			
 		
 		mapaDeNavegacion.put("REGISTRADO",opcionResJSP);
