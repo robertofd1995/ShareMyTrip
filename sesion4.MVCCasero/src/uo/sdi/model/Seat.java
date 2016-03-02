@@ -18,6 +18,17 @@ public class Seat {
 	private String comment;
 	private SeatStatus status;
 
+	public Seat(){
+		
+	}
+
+	public Seat(Long userId, Long tripId, String comment, SeatStatus status) {
+		super();
+		this.userId = userId;
+		this.tripId = tripId;
+		this.comment = comment;
+		this.status = status;
+	}
 
 	public Long[] makeKey() {
 		return new Long[]{ userId, tripId };

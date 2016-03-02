@@ -13,7 +13,6 @@ import javax.servlet.http.HttpSession;
 import alb.util.log.Log;
 import uo.sdi.acciones.*;
 import uo.sdi.acciones.publico.ValidarseAction;
-import uo.sdi.acciones.registrado.CerrarSesionAction;
 import uo.sdi.acciones.registrado.ConfirmarPasajerosAction;
 import uo.sdi.acciones.registrado.ModificarDatosAction;
 import uo.sdi.acciones.RegistrarViajeAction;
@@ -119,6 +118,9 @@ public class Controlador extends javax.servlet.http.HttpServlet {
 		mapaRegistrado.put("registrarViaje", new RegistrarViajeAction());
 		mapaRegistrado.put("cerrarSession", new CerrarSessionAction());
 		mapaRegistrado.put("verMisViajes", new VerMisViajesAction());
+		mapaRegistrado.put("confirmarSolicitud", new ConfirmarSolicitudAction());
+		mapaRegistrado.put("denegarSolicitud", new DenegarSolicitudAction());
+		mapaRegistrado.put("verSolicitudes", new VerSolicitudesAction());
 
 		mapaDeAcciones.put("REGISTRADO", mapaRegistrado);
 	}
@@ -197,6 +199,20 @@ public class Controlador extends javax.servlet.http.HttpServlet {
 		resJSP=new HashMap<String, String>();
 		resJSP.put("EXITO","/cerrarSesion.jsp");
 		opcionResJSP.put("cerrarSesion", resJSP);
+		//Confirmar solicitud
+			resJSP=new HashMap<String, String>();
+			resJSP.put("EXITO","/perfil.jsp");
+			resJSP.put("FRACASO", "/perfil.jsp");
+			opcionResJSP.put("confirmarSolicitud", resJSP);
+			//Denegar solicitud
+			resJSP=new HashMap<String, String>();
+			resJSP.put("EXITO","/perfil.jsp");
+			opcionResJSP.put("denegarSolicitud", resJSP);
+			//Ver solicitudes
+			resJSP=new HashMap<String, String>();
+			resJSP.put("EXITO","/solicitudes.jsp");
+			opcionResJSP.put("verSolicitudes", resJSP);
+			
 		
 		mapaDeNavegacion.put("REGISTRADO",opcionResJSP);
 	}
