@@ -1,10 +1,13 @@
 package uo.sdi.acciones;
 
+import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import sun.awt.datatransfer.DataTransferer;
 import uo.sdi.model.Trip;
 import uo.sdi.persistence.PersistenceFactory;
 import alb.util.log.Log;
@@ -16,10 +19,20 @@ public class ListarViajesAction implements Accion {
 			HttpServletResponse response) {
 		
 		List<Trip> viajes;
+		List<Trip> viajesValidos=new ArrayList<Trip>();
 		
 		try {
 			viajes=PersistenceFactory.newTripDao().findAll();
-			request.setAttribute("listaViajes", viajes);
+			
+			for (Trip trip : viajes) {
+				if (trip.getClosingDate().after(Calendar.getInstance().getTime())) {
+					if (trip.getAvailablePax()>0) {
+						viajesValidos.add(trip);
+					}
+				}
+			}
+			
+			request.setAttribute("listaViajes", viajesValidos);
 			Log.debug("Obtenida lista de viajes conteniendo [%d] viajes", viajes.size());
 		}
 		catch (Exception e) {

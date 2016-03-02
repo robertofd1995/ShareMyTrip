@@ -25,6 +25,7 @@ public class VerViajeAction implements Accion {
 		List<User> viajeros;
 		User promotor;
 		try{
+			request.setAttribute("error", "Si desea acceder a mas informacion , debe registrarse");
 			viaje = PersistenceFactory.newTripDao().findById(Long.parseLong(request.getParameter("id")));
 			request.setAttribute("viaje", viaje);
 			promotor = PersistenceFactory.newUserDao().findById(viaje.getPromoterId());
