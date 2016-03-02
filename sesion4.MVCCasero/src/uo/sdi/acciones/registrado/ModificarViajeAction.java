@@ -82,7 +82,16 @@ public class ModificarViajeAction implements Accion {
 
 		//borra el mensaje si se ha lanzado antes
 		session.removeAttribute("errorViaje");
-
+		
+		if (fechaLlegada.before(fechaSalida) || fechaSalida.equals(fechaLlegada)) {
+			
+			Log.info("Intento de modificar: Fechas no validas en el viaje[%s] por el"
+					+ " usuario [%s]",viaje.getId(), usuario.getLogin());
+			request.setAttribute("errorModificarViaje", "Las fechas no son validas"
+					+ " , ha de haber un dia al menos de diferencia");
+			result = "FRACASO";
+		}
+		
 		if (nuevaCalleSalida==null || nuevaCiudadSalida==null
 				|| nuevoEstadoSalida==null || nuevoPaisSalida==null
 				|| nuevaPostalOrigen==null 
@@ -94,7 +103,7 @@ public class ModificarViajeAction implements Accion {
 		{
 			Log.info("Campo/s vacio/s al intentar modificar el viaje[%s] por el"
 					+ " usuario [%s]",viaje.getId(), usuario.getLogin());
-			request.setAttribute("wrongRegistrarViaje", "Debe rellenar todos "
+			request.setAttribute("errorModificarViaje", "Debe rellenar todos "
 					+ "los campos (excepto latitud y longitud");
 			result = "FRACASO";
 		} else
@@ -134,7 +143,7 @@ public class ModificarViajeAction implements Accion {
 				Log.error(
 						"Algo ha ocurrido actualizando la información de [%s]",
 						usuario.getLogin());
-				session.setAttribute("errorViaje",
+				session.setAttribute("errorModificarViaje",
 						"Error actualizando los datos");
 			}
 		}

@@ -113,14 +113,17 @@
 							</div>
 						</div>
 						
-						<div class="col-xs-12 col-sm-4 emphasis">
-							<a class="btn btn-warning btn-block" href="cerrarSession"
-								style="margin-top: 6em;"> <span class="fa fa-user"></span>
-								Cerrar Session
-							</a>
-						</div>
 						
 					</div>
+					
+					<div class="col-xs-12 col-sm-4 emphasis">
+							<a class="btn btn-warning btn-block" href="cerrarSession"
+								style="margin-top: 6em;margin-left: 12.25em;">
+								<span class="fa fa-user"></span>
+								Cerrar Session
+							</a>
+					</div>
+						
 				</div>
 			</div>
 		</div>

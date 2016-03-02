@@ -289,6 +289,23 @@
 				</div>
 			</div>
 
+			<c:if test="${errorModificarViaje!=null}">
+				<!-- Mensajes de error -->
+				<center>
+					<div class="col-md-12">
+						<div class="update-nag">
+							<div class="update-close">X</div>
+							<div class="update-split update-danger">
+								<i class="glyphicon glyphicon-warning-sign"></i>
+							</div>
+							<div class="update-text">
+								<strong>Warning</strong> ${errorModificarUser}
+							</div>
+						</div>
+					</div>
+				</center>
+			</c:if>
+
 
 			<!-- Finalizar registro -->
 			<center>
@@ -308,9 +325,9 @@
 	<center>
 		<form id="eliminarViaje"
 			action="eliminarViaje?id=<jsp:getProperty property="id" name="viaje" />"
-			method="post" class="form-horizontal" >
-			<button id="cancel" name="confirmar" class="btn btn-danger" type="submit">
-				Borrar Viaje</button>
+			method="post" class="form-horizontal">
+			<button id="cancel" name="confirmar" class="btn btn-danger"
+				type="submit">Borrar Viaje</button>
 		</form>
 	</center>
 

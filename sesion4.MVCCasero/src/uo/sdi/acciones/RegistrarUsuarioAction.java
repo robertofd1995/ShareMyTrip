@@ -51,7 +51,7 @@ public class RegistrarUsuarioAction implements Accion {
 								apellidos, correo);
 						dao.save(newUser);
 						Log.info("Se ha registrado el usuario [%s]", nombreUsuario);
-						// session.setAttribute("user", newUser); quitado
+						session.setAttribute("user", newUser); 
 					} else
 					{
 						session.invalidate();
