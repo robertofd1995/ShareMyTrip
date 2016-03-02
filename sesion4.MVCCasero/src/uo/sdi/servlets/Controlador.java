@@ -16,7 +16,9 @@ import uo.sdi.acciones.publico.ValidarseAction;
 import uo.sdi.acciones.registrado.CerrarSesionAction;
 import uo.sdi.acciones.registrado.ConfirmarPasajerosAction;
 import uo.sdi.acciones.registrado.ModificarDatosAction;
+import uo.sdi.acciones.registrado.ModificarPasswordAction;
 import uo.sdi.acciones.RegistrarViajeAction;
+import uo.sdi.model.User;
 
 
 public class Controlador extends javax.servlet.http.HttpServlet {
@@ -55,11 +57,17 @@ public class Controlador extends javax.servlet.http.HttpServlet {
 
 		} catch(Exception e) {
 			
-			req.getSession().invalidate();
-			
+			if (req.getSession()!=null && ((User) req.getSession().getAttribute("user"))!=null) {
+				jspSiguiente="/perfil.jsp";
+				req.getSession().setAttribute("errorPerfil","Ha ocurrido un error");
+			}else{
+				req.getSession().invalidate();
+				jspSiguiente="/error.jsp";
+			}
 			Log.error("Se ha producido alguna excepción no manejada [%s]",e);
+			//
 			
-			jspSiguiente="/error.jsp";
+			
 			//throw e;
 		}
 			
@@ -112,6 +120,7 @@ public class Controlador extends javax.servlet.http.HttpServlet {
 		
 		Map<String,Accion> mapaRegistrado=new HashMap<String,Accion>();
 		mapaRegistrado.put("modificarDatos", new ModificarDatosAction());
+		mapaRegistrado.put("modificarPassword", new ModificarPasswordAction());
 		mapaRegistrado.put("listarViajes", new ListarViajesAction());
 		mapaRegistrado.put("mostrarViaje", new VerViajeAction());
 		mapaRegistrado.put("solicitarPlaza", new SolicitarPlazaAction());
@@ -170,11 +179,16 @@ public class Controlador extends javax.servlet.http.HttpServlet {
 		resJSP=new HashMap<String, String>();
 		resJSP.put("EXITO","/listaViajes.jsp");
 		opcionResJSP.put("listarViajes", resJSP);
-		//Modificar datos
+		//Modificar datos user
 		resJSP=new HashMap<String, String>();
 		resJSP.put("EXITO","/modificarDatos.jsp");
-		resJSP.put("FRACASO","/perfil.jsp");
+		resJSP.put("FRACASO","/modificarDatos.jsp");
 		opcionResJSP.put("modificarDatos", resJSP);
+		//Modificar password user
+		resJSP=new HashMap<String, String>();
+		resJSP.put("EXITO","/modificarDatos.jsp");
+		resJSP.put("FRACASO","/modificarDatos.jsp");
+		opcionResJSP.put("modificarPassword", resJSP);
 		//Solicitar plaza
 		resJSP=new HashMap<String, String>();
 		resJSP.put("EXITO","/perfil.jsp");
