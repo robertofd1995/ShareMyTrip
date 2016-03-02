@@ -23,8 +23,9 @@ public class SolicitarPlazaAction implements Accion {
 			HttpServletResponse response) {
 		Trip viaje;
 		String resultado = "EXITO";
-		User usuario = (User) request.getSession().getAttribute("user");
+		User usuario;
 		try {
+			usuario = (User) request.getSession().getAttribute("user");
 			TripDao dao = PersistenceFactory.newTripDao();
 			viaje = dao.findById(Long.parseLong(request.getParameter("id")));
 			if (viaje.getAvailablePax() > 0) { 			

@@ -50,6 +50,7 @@ public class RegistrarUsuarioAction implements Accion {
 						User newUser = new User(nombreUsuario, password, nombre,
 								apellidos, correo);
 						dao.save(newUser);
+						newUser = PersistenceFactory.newUserDao().findByLogin(nombreUsuario);
 						Log.info("Se ha registrado el usuario [%s]", nombreUsuario);
 						session.setAttribute("user", newUser); 
 					} else
