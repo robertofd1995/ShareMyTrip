@@ -13,6 +13,7 @@
 			<th>Fecha</th>
 			<th>Origen</th>
 			<th>Solicitudes</th>
+			<th>Modificar Viaje</th>
 		</tr>
 		<c:forEach items="${misViajes}" var="entry" >
 			<tr>
@@ -20,6 +21,7 @@
 				<td>${entry.value.departureDate}</td>
 				<td>${entry.value.departure.city}</td>
 				<td><a href="verSolicitudes?id=${entry.value.id}">Ver solicitudes</a></td>
+				<td><a href="modificarViaje?id=${entry.value.id}">Modificar/Cancelar Viaje</a></td>
 			</tr>
 		</c:forEach>
 	</table>
