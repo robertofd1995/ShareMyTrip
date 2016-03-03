@@ -131,7 +131,7 @@
 			<!-- Fecha y hora salida -->
 			<div class="form-group">
 				<label class="col-md-4 control-label" for="fecha_salida">Fecha
-					y hora de llegada (dd/mm/aaaa hh:mm)</label>
+					y hora de llegada (dd-mm-aaaa hh:mm)</label>
 				<div class="col-md-4">
 					<input id="fecha_salida" name="fecha_salida" type="text"
 						value="<fmt:formatDate value="${viaje.departureDate}" pattern="dd-MM-yyyy hh:mm"/>"

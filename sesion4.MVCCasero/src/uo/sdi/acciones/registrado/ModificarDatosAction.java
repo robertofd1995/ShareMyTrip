@@ -32,6 +32,7 @@ public class ModificarDatosAction implements Accion {
 
 
 		//borra el mensaje si se ha lanzado antes
+		session.removeAttribute("error");
 		session.removeAttribute("errorModificarUser");
 		session.removeAttribute("okModificarUser");
 		
