@@ -55,7 +55,7 @@
 					<ul class="dropdown-menu" role="menu">
 						<!-- <li><a href="#">Action</a></li>
 						<li><a href="#">Another action</a></li>  -->
-						<li><a href="https://github.com/robertofd1995/ShareMyTrip">Codigok</a></li>
+						<li><a href="https://github.com/robertofd1995/ShareMyTrip">Codigo</a></li>
 						<li><a href="https://github.com/robertofd1995/ShareMyTrip/wiki"
 						  target="_blank"></i>Documentacion en GitHub</a></li>
 						<li class="divider"></li>
