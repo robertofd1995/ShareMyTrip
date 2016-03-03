@@ -131,15 +131,13 @@ public class Controlador extends javax.servlet.http.HttpServlet {
 		mapaRegistrado.put("listarViajes", new ListarViajesAction());
 		mapaRegistrado.put("mostrarViaje", new VerViajeAction());
 		mapaRegistrado.put("solicitarPlaza", new SolicitarPlazaAction());
-		mapaRegistrado
-				.put("confirmarPasajeros", new ConfirmarPasajerosAction());
+		mapaRegistrado.put("confirmarPasajeros", new ConfirmarPasajerosAction());
 		mapaRegistrado.put("registrarViaje", new RegistrarViajeAction());
 		mapaRegistrado.put("cerrarSession", new CerrarSessionAction());
 		mapaRegistrado.put("verMisViajes", new VerMisViajesAction());
 		mapaRegistrado.put("modificarViaje", new ModificarViajeAction());
 		mapaRegistrado.put("eliminarViaje", new EliminarViajeAction());
-		mapaRegistrado
-				.put("confirmarSolicitud", new ConfirmarSolicitudAction());
+		mapaRegistrado.put("confirmarSolicitud", new ConfirmarSolicitudAction());
 		mapaRegistrado.put("denegarSolicitud", new DenegarSolicitudAction());
 		mapaRegistrado.put("verSolicitudes", new VerSolicitudesAction());
 		mapaRegistrado.put("cancelarSolicitud", new CancelarSolicitudAction());

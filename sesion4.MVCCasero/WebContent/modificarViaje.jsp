@@ -299,7 +299,7 @@
 								<i class="glyphicon glyphicon-warning-sign"></i>
 							</div>
 							<div class="update-text">
-								<strong>Warning</strong> ${errorModificarUser}
+								<strong>Warning</strong> ${errorModificarViaje}
 							</div>
 						</div>
 					</div>

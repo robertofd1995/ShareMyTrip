@@ -17,6 +17,10 @@
 </head>
 <body>
 
+<a class="btn btn-success btn-block" href="verMisViajes" data-toggle="tooltip" 
+	data-placement="bottom" title="Perfil"><span class="fa fa-user"></span>
+</a>
+
 <div class="col-md-12">
 	<table border="1" align="center" class="table table-hover">
 			<tr>
