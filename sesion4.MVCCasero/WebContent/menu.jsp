@@ -77,7 +77,7 @@
 					<ul id="login-dp" class="dropdown-menu">
 						<li>
 							<div class="row">
-								<div class="col-md-12">
+								<div class="col-md-12" id="login">
 									Login
 									<form class="form" role="form" method="post" action="validarse"
 										accept-charset="UTF-8" id="login-nav">
@@ -93,7 +93,7 @@
 												<a href="#">¿Has olvidado la contraseña?</a>
 											</div>
 
-											<button type="submit" class="btn btn-primary btn-block">Sign
+											<button type="submit" id="signIn" class="btn btn-primary btn-block">Sign
 												in</button>
 										</div>
 										<div class="checkbox">

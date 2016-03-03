@@ -75,7 +75,7 @@
 								<small>Ultimo viaje</small>
 							</p>
 							<a href="verMisViajes"><button
-									class="btn btn-success btn-block">
+									class="btn btn-success btn-block" id="verMisViajes">
 									<span class="fa fa-plus-circle"></span> Ver Mis Viajes
 								</button></a>
 						</div>
