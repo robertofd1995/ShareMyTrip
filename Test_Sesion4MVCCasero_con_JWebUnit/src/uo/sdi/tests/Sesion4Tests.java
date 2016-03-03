@@ -14,10 +14,11 @@ public class Sesion4Tests {
     @Test
     public void testListarViajes() {
         beginAt("/");  // Navegar a la URL
+        assertLinkPresent("btn");  // Comprobar que existe el hipervínculo
         assertLinkPresent("listarViajes");  // Comprobar que existe el hipervínculo
         clickLink("listarViajes"); // Seguir el hipervínculo
 
-        assertTitleEquals("ShareMyTrip - Listado de viajes");  // Comprobar título de la página
+        assertTitleEquals("ShareMyTrip");  // Comprobar título de la página
 
         // La base de datos contiene 2 viajes tal y como se entrega
         assertElementPresent("item_0"); // Comprobar elemento presente en la página
