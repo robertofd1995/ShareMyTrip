@@ -76,7 +76,7 @@ $(document).ready(function(){
 						</button>
 					</div>
 				</div>
-				<table class="table">
+				<table class="table" id="misViajes">
 					<thead>
 						<tr class="filters">
 							<th><input type="text" class="form-control"

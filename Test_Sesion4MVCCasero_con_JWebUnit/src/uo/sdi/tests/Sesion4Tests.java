@@ -1,7 +1,5 @@
 package uo.sdi.tests;
 
-import net.sourceforge.jwebunit.api.IElement;
-
 import org.junit.*;
 
 import static net.sourceforge.jwebunit.junit.JWebUnit.*;
@@ -58,9 +56,9 @@ public class Sesion4Tests {
         assertTextPresent("usuario no esta registrado");
     }
 
-    /*
-     * 1. Iniciar sesion sin exito debido a introducir contraseña incorrecta
-     */
+    
+     // 1. Iniciar sesion sin exito debido a introducir contraseña incorrecta
+     
     @Test
     public void testIniciarSesionContraseñaIncorrecta() {
     	// Rellenando el formulario HTML
@@ -73,7 +71,7 @@ public class Sesion4Tests {
     }
     
     
-     /* 2. Usuario promotor, registrar un nuevo viaje*/
+     // 2. Usuario promotor, registrar un nuevo viaje
         @Test
     public void testRegistrarViaje() {
     	// Rellenando el formulario HTML
@@ -100,11 +98,46 @@ public class Sesion4Tests {
         setTextField("fecha_limite", "31/12/2016 23:00"); // Rellenar primer campo de formulario
         setTextField("coste", "100"); // Rellenar primer campo de formulario
         setTextField("comentarios", "..."); // Rellenar primer campo de formulario
+        setTextField("plazas_maximas", "5"); // Rellenar primer campo de formulario
         setTextField("plazas_disponibles", "5"); // Rellenar primer campo de formulario
       
         clickButton("button1id"); // Seguir el hipervínculo
         
         assertTextPresent("Luisa Perez");
+        gotoPage("http://localhost:8280/sesion4.MVCCasero/listarViajes");
+        assertTablePresent("viajes");
+        assertTextInTable("viajes", "ciudad");
+        assertTextInTable("viajes", "ciudad2");
+        
     }
+        
      /* 3. Usuario nopromotor, solicitar plaza en un viaje */
+        
+        @Test
+        public void testSolicitarPlaza() {
+        	// Rellenando el formulario HTML
+        	beginAt("/validarse?nombreUsuario=user2&pass=user2");  // Navegar a la URL
+        	gotoPage("http://localhost:8280/sesion4.MVCCasero/listarViajes");
+        	clickLinkWithExactText("33");      	
+        	clickLinkWithExactText("Solicitar plaza");
+        	gotoPage("http://localhost:8280/sesion4.MVCCasero/verMisViajes");
+        	assertTablePresent("misViajes");
+        	assertTextInTable("misViajes", "33");
+        	assertTextInTable("misViajes", "PENDIENTE");
+        }
+        
+        //Usuario intenta registrarse introduciendo dos contraseñas diferentes
+        @Test
+        public void testLoginContraseñasNoCoinciden() {
+        	// Rellenando el formulario HTML
+        	beginAt("/registroUsuario.jsp");  // Navegar a la URL
+        	setTextField("nombreUsuario", "usuarioNoVaAEntrar");
+        	setTextField("nombre", "noEntro");
+        	setTextField("apellidos", "noEntrare");
+        	setTextField("pass1", "pass1");
+        	setTextField("pass2", "pass2");
+        	setTextField("correo", "no@nunca.com");
+        	clickButton("button1id");
+        	assertTextPresent("Las contraseñas deben ser iguales");
+        }
 }

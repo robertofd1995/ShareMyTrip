@@ -56,7 +56,7 @@
 
 			<!-- Password -->
 			<div class="form-group">
-				<label class="col-md-4 control-label" for="pass1">Constraseña</label>
+				<label class="col-md-4 control-label" for="pass1">Contraseña</label>
 				<div class="col-md-4">
 					<input id="pass1" name="pass1" type="password"
 						placeholder="contraseña" class="form-control input-md" required="">

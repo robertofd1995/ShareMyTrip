@@ -1,11 +1,9 @@
-package uo.sdi.acciones.registrado;
+package uo.sdi.acciones;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import alb.util.log.Log;
-import uo.sdi.acciones.Accion;
-import uo.sdi.model.Trip;
 import uo.sdi.persistence.PersistenceFactory;
 import uo.sdi.persistence.TripDao;
 
@@ -18,7 +16,6 @@ public class EliminarViajeAction implements Accion {
 		String result="FRACASO";
 		
 		Long idViaje = Long.parseLong(request.getParameter("id"));
-		Trip viaje = ((Trip) PersistenceFactory.newTripDao().findById(idViaje));
 		
 		try
 		{

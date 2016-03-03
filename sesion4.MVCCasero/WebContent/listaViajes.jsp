@@ -81,7 +81,7 @@ $(document).ready(function(){
 						</button>
 					</div>
 				</div>
-				<table class="table">
+				<table class="table" name="viajes">
 					<thead>
 						<tr class="filters">
 							<th><input type="text" class="form-control"
@@ -99,9 +99,9 @@ $(document).ready(function(){
 					<tbody>
 						<c:forEach var="entry" items="${listaViajes}" varStatus="i">
 							<tr id="item_${i.index}">
-								<td><a href="mostrarViaje?id=${entry.id}">${entry.id}</a></td>
-								<td>${entry.departure.city}</td>
-								<td>${entry.destination.city}</td>
+								<td><a id="mostrarViaje" href="mostrarViaje?id=${entry.id}">${entry.id}</a></td>
+								<td id="origen">${entry.departure.city}</td>
+								<td id="destino">${entry.destination.city}</td>
 								<td>${entry.availablePax}</td>
 								<td>${entry.estimatedCost}</td>
 							</tr>

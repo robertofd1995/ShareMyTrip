@@ -1,4 +1,4 @@
-package uo.sdi.acciones.registrado;
+package uo.sdi.acciones;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -9,7 +9,6 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import alb.util.log.Log;
-import uo.sdi.acciones.Accion;
 import uo.sdi.model.AddressPoint;
 import uo.sdi.model.Trip;
 import uo.sdi.model.User;
