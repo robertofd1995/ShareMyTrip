@@ -101,14 +101,15 @@ public class Sesion4Tests {
         setTextField("plazas_maximas", "5"); // Rellenar primer campo de formulario
         setTextField("plazas_disponibles", "5"); // Rellenar primer campo de formulario
       
-        clickButton("button1id"); // Seguir el hipervínculo
+        clickButton("button1id");
         
         assertTextPresent("Luisa Perez");
         gotoPage("http://localhost:8280/sesion4.MVCCasero/listarViajes");
-        assertTablePresent("viajes");
-        assertTextInTable("viajes", "ciudad");
-        assertTextInTable("viajes", "ciudad2");
+        assertTablePresent("abc");
+        assertTextInTable("abc", "ciudad");
+        assertTextInTable("abc", "ciudad2");
         
+        //delete from ttrips where departure_city = 'ciudad' and destination_city = 'ciudad2';
     }
         
      /* 3. Usuario nopromotor, solicitar plaza en un viaje */
@@ -116,14 +117,15 @@ public class Sesion4Tests {
         @Test
         public void testSolicitarPlaza() {
         	// Rellenando el formulario HTML
-        	beginAt("/validarse?nombreUsuario=user2&pass=user2");  // Navegar a la URL
+        	beginAt("/validarse?nombreUsuario=user3&pass=user3");  // Navegar a la URL
         	gotoPage("http://localhost:8280/sesion4.MVCCasero/listarViajes");
-        	clickLinkWithExactText("33");      	
+        	clickLinkWithExactText("36");      	
         	clickLinkWithExactText("Solicitar plaza");
         	gotoPage("http://localhost:8280/sesion4.MVCCasero/verMisViajes");
-        	assertTablePresent("misViajes");
-        	assertTextInTable("misViajes", "33");
-        	assertTextInTable("misViajes", "PENDIENTE");
+        	assertTablePresent("abc");
+        	assertTextInTable("abc", "36");
+        	assertTextInTable("abc", "PENDIENTE");
+        	//delete from tapplications where applicants_id=308 and appliedtrips_id=32;
         }
         
         //Usuario intenta registrarse introduciendo dos contraseñas diferentes
@@ -140,4 +142,5 @@ public class Sesion4Tests {
         	clickButton("button1id");
         	assertTextPresent("Las contraseñas deben ser iguales");
         }
+        
 }

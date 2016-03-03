@@ -65,7 +65,7 @@ $(document).ready(function(){
 </script>
 
 </head>
-<body  onload="init()">
+<body>  <!-- onload="init()"> -->
 
 <c:if test="${user!=null}">
 		<a class="btn btn-success btn-block" href="perfil.jsp" data-toggle="tooltip" 
