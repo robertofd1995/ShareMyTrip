@@ -105,8 +105,8 @@
 									<li><a href="registroViaje.jsp"><span
 											class="fa fa-list pull-right"></span> Registrar Viaje </a></li>
 									<li class="divider"></li>
-									<li><a href="#"><span class="fa fa-warning pull-right"></span>Report
-											this user for spam *</a></li>
+									<li><a href="#"><span class="fa fa-warning pull-right"></span>Reportar
+											a este usuario *</a></li>
 									<!-- <li class="divider"></li>
                         <li><a href="#" class="btn disabled" role="button"> Unfollow </a></li>  -->
 								</ul>
@@ -118,7 +118,7 @@
 					
 					<div class="col-xs-12 col-sm-4 emphasis">
 							<a class="btn btn-warning btn-block" href="cerrarSession"
-								style="margin-top: 6em;margin-left: 12.25em;">
+								style="margin-top: 5em;margin-left: 12.25em;">
 								<span class="fa fa-user"></span>
 								Cerrar Session
 							</a>

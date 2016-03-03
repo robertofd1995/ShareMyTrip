@@ -77,7 +77,7 @@ $(document).ready(function(){
 					<h3 class="panel-title">Users</h3>
 					<div class="pull-right">
 						<button class="btn btn-default btn-xs btn-filter">
-							<span class="glyphicon glyphicon-filter"></span> Filter
+							<span class="glyphicon glyphicon-filter"></span> Filtro
 						</button>
 					</div>
 				</div>
