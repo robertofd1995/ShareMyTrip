@@ -11,7 +11,6 @@ import javax.servlet.http.HttpServletResponse;
 import alb.util.log.Log;
 import uo.sdi.model.Seat;
 import uo.sdi.model.Trip;
-import uo.sdi.model.TripStatus;
 import uo.sdi.model.User;
 import uo.sdi.persistence.PersistenceFactory;
 

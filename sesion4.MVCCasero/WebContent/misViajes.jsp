@@ -78,6 +78,7 @@ $(document).ready(function(){
 					</div>
 				</div>
 				<table id="abc" class="table">
+
 					<thead>
 						<tr class="filters">
 							<th><input type="text" class="form-control"

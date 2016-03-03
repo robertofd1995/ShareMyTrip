@@ -1,4 +1,4 @@
-package uo.sdi.acciones.registrado;
+package uo.sdi.acciones;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -7,7 +7,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import uo.sdi.acciones.Accion;
 import uo.sdi.model.User;
 import uo.sdi.persistence.PersistenceFactory;
 import uo.sdi.persistence.UserDao;

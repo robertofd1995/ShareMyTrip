@@ -8,7 +8,6 @@ import javax.servlet.http.HttpServletResponse;
 
 import alb.util.log.Log;
 import uo.sdi.acciones.Accion;
-import uo.sdi.model.Rating;
 import uo.sdi.model.Seat;
 import uo.sdi.model.SeatStatus;
 import uo.sdi.model.Trip;

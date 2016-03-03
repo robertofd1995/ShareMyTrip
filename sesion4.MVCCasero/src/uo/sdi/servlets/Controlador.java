@@ -12,12 +12,6 @@ import javax.servlet.http.HttpSession;
 
 import alb.util.log.Log;
 import uo.sdi.acciones.*;
-import uo.sdi.acciones.publico.ValidarseAction;
-import uo.sdi.acciones.registrado.ConfirmarPasajerosAction;
-import uo.sdi.acciones.registrado.EliminarViajeAction;
-import uo.sdi.acciones.registrado.ModificarDatosAction;
-import uo.sdi.acciones.registrado.ModificarPasswordAction;
-import uo.sdi.acciones.registrado.ModificarViajeAction;
 import uo.sdi.acciones.RegistrarViajeAction;
 import uo.sdi.model.User;
 
@@ -131,7 +125,10 @@ public class Controlador extends javax.servlet.http.HttpServlet {
 		mapaRegistrado.put("listarViajes", new ListarViajesAction());
 		mapaRegistrado.put("mostrarViaje", new VerViajeAction());
 		mapaRegistrado.put("solicitarPlaza", new SolicitarPlazaAction());
+<<<<<<< HEAD
 		mapaRegistrado.put("confirmarPasajeros", new ConfirmarPasajerosAction());
+=======
+>>>>>>> featureTest
 		mapaRegistrado.put("registrarViaje", new RegistrarViajeAction());
 		mapaRegistrado.put("cerrarSession", new CerrarSessionAction());
 		mapaRegistrado.put("verMisViajes", new VerMisViajesAction());
@@ -165,7 +162,7 @@ public class Controlador extends javax.servlet.http.HttpServlet {
 		resJSP.put("EXITO", "/menu.jsp");
 		opcionResJSP.put("mostrarViaje", resJSP);
 		resJSP = new HashMap<String, String>();
-		resJSP.put("EXITO", "/perfil.jsp"); // TODO corregir
+		resJSP.put("EXITO", "/perfil.jsp"); 
 		resJSP.put("FRACASO", "/menu.jsp");
 		opcionResJSP.put("registrarUsuario", resJSP);
 
@@ -206,11 +203,7 @@ public class Controlador extends javax.servlet.http.HttpServlet {
 		resJSP.put("EXITO", "/perfil.jsp");
 		resJSP.put("FRACASO", "/perfil.jsp");
 		opcionResJSP.put("solicitarPlaza", resJSP);
-		// Confirmar pasajeros
-		resJSP = new HashMap<String, String>();
-		resJSP.put("EXITO", "/confirmarPasajeros.jsp");
-		resJSP.put("FRACASO", "/errorConfirmarPasajeros.jsp");
-		opcionResJSP.put("confirmarPasajeros", resJSP);
+
 		// Ver mis viajes
 		resJSP = new HashMap<String, String>();
 		resJSP.put("EXITO", "/misViajes.jsp");

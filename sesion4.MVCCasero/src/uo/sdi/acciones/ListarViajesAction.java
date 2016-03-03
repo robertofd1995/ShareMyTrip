@@ -7,7 +7,6 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import sun.awt.datatransfer.DataTransferer;
 import uo.sdi.model.Trip;
 import uo.sdi.persistence.PersistenceFactory;
 import alb.util.log.Log;
