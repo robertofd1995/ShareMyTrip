@@ -70,6 +70,15 @@ public class ModificarViajeAction implements Accion {
 				fechaSalida = new SimpleDateFormat("dd-MM-yyyy hh:mm").parse(request.getParameter("fecha_salida"));
 				fechaLlegada = new SimpleDateFormat("dd-MM-yyyy hh:mm").parse(request.getParameter("fecha_llegada"));
 				fechaLimite = new SimpleDateFormat("dd-MM-yyyy hh:mm").parse(request.getParameter("fecha_limite"));
+				
+				if (fechaLlegada.before(fechaSalida) || fechaSalida.equals(fechaLlegada)) {
+					
+					Log.info("Intento de modificar: Fechas no validas en el viaje[%s] por el"
+							+ " usuario [%s]",viaje.getId(), usuario.getLogin());
+					request.setAttribute("errorModificarViaje", "Las fechas no son validas"
+							+ " , ha de haber un dia al menos de diferencia");
+					result = "FRACASO";
+				}
 			} catch (ParseException e1) {
 				request.setAttribute("error", "Las fechas introducidas no cumplen el formato");
 				Log.info("Fechas introducidas incorrectas al registrar un viaje");
@@ -83,14 +92,7 @@ public class ModificarViajeAction implements Accion {
 		//borra el mensaje si se ha lanzado antes
 		session.removeAttribute("errorViaje");
 		
-		if (fechaLlegada.before(fechaSalida) || fechaSalida.equals(fechaLlegada)) {
-			
-			Log.info("Intento de modificar: Fechas no validas en el viaje[%s] por el"
-					+ " usuario [%s]",viaje.getId(), usuario.getLogin());
-			request.setAttribute("errorModificarViaje", "Las fechas no son validas"
-					+ " , ha de haber un dia al menos de diferencia");
-			result = "FRACASO";
-		}
+		
 		
 		if (nuevaCalleSalida==null || nuevaCiudadSalida==null
 				|| nuevoEstadoSalida==null || nuevoPaisSalida==null
