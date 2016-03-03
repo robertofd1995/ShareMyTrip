@@ -115,7 +115,7 @@ data-placement="bottom" title="Perfil"><span class="fa fa-user"></span>
 
 			<!-- Text input-->
 			<div class="form-group">
-				<label class="col-md-4 control-label" for="nuevaPass2">Email</label>
+				<label class="col-md-4 control-label" for="nuevaPass2">Nueva contraseña</label>
 				<div class="col-md-4">
 					<input id="nuevaPass2" name="nuevaPassword2" type="password"
 						placeholder="repita de nuevo la nueva contraseña"
