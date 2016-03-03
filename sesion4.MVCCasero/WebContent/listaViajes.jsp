@@ -59,10 +59,13 @@ $(document).ready(function(){
         }
     });
 });
+
+
+    
 </script>
 
 </head>
-<body>
+<body  onload="init()">
 
 <c:if test="${user!=null}">
 		<a class="btn btn-success btn-block" href="perfil.jsp" data-toggle="tooltip" 
@@ -81,18 +84,18 @@ $(document).ready(function(){
 						</button>
 					</div>
 				</div>
-				<table class="table">
+				<table id="abc" class="table">
 					<thead>
 						<tr class="filters">
-							<th><input type="text" class="form-control"
+							<th><input type="text" class="form-control" 
 								placeholder="Id viaje" disabled></th>
-							<th><input type="text" class="form-control"
+							<th><input type="text" class="form-control" 
 								placeholder="Origen" disabled></th>
-							<th><input type="text" class="form-control"
+							<th><input type="text" class="form-control" 
 								placeholder="Destino" disabled></th>
-							<th><input type="text" class="form-control"
+							<th><input type="text" class="form-control" 
 								placeholder="Plazas Libres" disabled></th>
-							<th><input type="text" class="form-control"
+							<th><input type="text" class="form-control" 
 								placeholder="Coste" disabled></th>
 						</tr>
 					</thead>
@@ -107,12 +110,10 @@ $(document).ready(function(){
 							</tr>
 						</c:forEach>
 					</tbody>
-				</table>
+				</table>				
 			</div>
 		</div>
 	</div>
-
-
 
 </body>
 </html>

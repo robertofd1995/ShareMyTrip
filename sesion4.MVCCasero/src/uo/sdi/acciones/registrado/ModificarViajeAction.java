@@ -35,6 +35,7 @@ public class ModificarViajeAction implements Accion {
 		request.setAttribute("viaje", viaje);
 		request.setAttribute("salida", salida);
 		request.setAttribute("destino", destino);
+		request.removeAttribute("errorModificarViaje");
 
 		String nuevaCalleSalida = request.getParameter("calle_salida");
 		String nuevaCiudadSalida = request.getParameter("ciudad_salida");

@@ -10,7 +10,7 @@
 <link rel="stylesheet" href="css/listadoViajes.css">
 <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css"
 	rel="stylesheet">
-	
+
 <script type="text/javascript">
 $(document).ready(function(){
     $('.filterable .btn-filter').click(function(){
@@ -54,6 +54,7 @@ $(document).ready(function(){
         }
     });
 });
+
 </script>
 
 <title>ShareMyTrip - Listado de mis viajes</title>
@@ -76,7 +77,7 @@ $(document).ready(function(){
 						</button>
 					</div>
 				</div>
-				<table class="table">
+				<table id="abc" class="table">
 					<thead>
 						<tr class="filters">
 							<th><input type="text" class="form-control"
